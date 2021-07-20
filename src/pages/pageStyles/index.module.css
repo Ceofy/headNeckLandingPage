@@ -1,0 +1,49 @@
+:root {
+  --header-height: 103px;
+}
+
+h2 {
+  text-align: center;
+  font-size: 36px;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  font-weight: 400;
+}
+
+p {
+  font-size: 20px;
+  margin-left: 5em;
+  margin-right: 5em;
+  line-height: 28px;
+  text-align: justify;
+}
+
+h2::before {
+  display: block;
+  content: ' ';
+  margin-top: calc(-1 * var(--header-height));
+  height: var(--header-height);
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.logosContainer {
+  text-align: center;
+}
+
+.largeLogo {
+  max-width: 25em;
+  max-height: 5em;
+  margin: 1em;
+  margin-bottom: 2em !important;
+
+  vertical-align: middle;
+}
+
+.smallLogo {
+  max-height: 8em;
+  margin: 1.5em;
+  margin-bottom: 2.5em !important;
+
+  vertical-align: middle;
+}

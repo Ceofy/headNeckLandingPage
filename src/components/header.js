@@ -4,27 +4,13 @@ import PropTypes from 'prop-types';
 import LinkOut from './linkOut';
 
 import styles from './componentStyles/header.module.css';
+import ucsdLogo from '../images/UCSanDiegoLogo-White.png';
 
 const Header = ({ siteTitle }) => (
   <header className={styles.header}>
     <div className={styles.left}>
-      <LinkOut
-        className={styles.underlineLink}
-        link='https://medschool.ucsd.edu/Pages/default.aspx'
-      >
-        UC San Diego
-      </LinkOut>
-      <LinkOut
-        className={styles.noUnderlineLink}
-        link='http://idekerlab.ucsd.edu'
-      >
-        {' - '}
-      </LinkOut>
-      <LinkOut
-        className={styles.underlineLink}
-        link='http://idekerlab.ucsd.edu'
-      >
-        Ideker Lab
+      <LinkOut link='https://medschool.ucsd.edu/Pages/default.aspx'>
+        <img src={ucsdLogo} className={styles.logo} />
       </LinkOut>
     </div>
   </header>

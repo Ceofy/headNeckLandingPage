@@ -1,8 +1,8 @@
 module.exports = {
-  pathPrefix: '/title',
+  pathPrefix: `/prefix`,
   siteMetadata: {
-    title: `Ideker Lab Title Project Page`,
-    description: `Ideker Lab project page for Title ()`,
+    title: `Title`,
+    description: `Ideker Lab project page for Title (Subtitle)`,
     author: `UCSD Ideker Lab`,
   },
   plugins: [
@@ -36,9 +36,5 @@ module.exports = {
       },
     },
     `gatsby-transformer-remark`,
-
-    // this (optional) plugin enables Progressive Web App + Offline functionality
-    // To learn more, visit: https://gatsby.dev/offline
-    // `gatsby-plugin-offline`,
   ],
 };

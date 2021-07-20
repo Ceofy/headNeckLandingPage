@@ -1,27 +1,46 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import './componentStyles/buttonLink.css';
 
-const ButtonLink = (props) => (
-  <div id={props.tooltip ? 'tooltip' : ''}>
-    <form target='_blank' rel='noopener noreferrer' action={props.link}>
-      <button type='submit'>
-        <span id='buttonText'>{props.text}</span>
-      </button>
-    </form>
-    <span id='tooltipText' className={props.tooltipPosition}>
-      {props.tooltipText}
-    </span>
-    <span id='tooltipConnector' className={props.tooltipPosition} />
-  </div>
-);
+import styles from './componentStyles/buttonLink.module.css';
+
+const ButtonLink = (props) => {
+  return (
+    <div className={props.tooltip ? styles.tooltip : ''}>
+      <a href={props.link} target='_blank' className={styles.noUnderline}>
+        <div
+          className={[
+            styles.divClass,
+            props.vertical ? styles.vertical : styles.horizontal,
+          ].join(' ')}
+        >
+          {props.text}
+        </div>
+      </a>
+      <span
+        className={[
+          styles.tooltipText,
+          props.tooltipPosition === 'top' ? styles.top : styles.bottom,
+        ].join(' ')}
+      >
+        {props.tooltipText}
+      </span>
+      <span
+        className={[
+          styles.tooltipConnector,
+          props.tooltipPosition === 'top' ? styles.top : styles.bottom,
+        ].join(' ')}
+      />
+    </div>
+  );
+};
 
 ButtonLink.propTypes = {
-  text: PropTypes.string,
+  text: [PropTypes.string, PropTypes.node],
   link: PropTypes.string,
+  vertical: PropTypes.bool,
   tooltip: PropTypes.bool,
-  tooltipText: PropTypes.node,
   tooltipPosition: PropTypes.string,
+  tooltipText: [PropTypes.string, PropTypes.node],
 };
 
 export default ButtonLink;

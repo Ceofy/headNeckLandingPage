@@ -9,22 +9,33 @@
 }
 
 .left {
-  vertical-align: middle;
   padding: 0.5rem;
   margin-left: 3.5rem;
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
 }
 
 .noUnderlineLink {
   text-decoration: none;
-  color: #dddddd;
-  font-size: 28px;
-  font-weight: 300;
 }
 
-.underlineLink {
+.marginNoUnderlineLink {
   composes: noUnderlineLink;
+  margin-left: 6px;
+  margin-right: 2px;
 }
 
-.underlineLink:hover {
-  text-decoration: underline;
+.logo {
+  height: 45px;
+  margin: 0;
+  margin-top: 10px;
+}
+
+.link {
+  color: white;
+  font-size: 44px;
+  font-weight: 200;
+  margin: 0;
+  margin-bottom: 5px;
 }
